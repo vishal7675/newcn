@@ -113,10 +113,10 @@ except:
     exit(1)
 
 class CloneBot(Client):
-    def start(self):
-        super().start()
-        for id in sorted(AUTHORIZED_CHATS.union(SUDO_USERS)):
-            try:
+    def __init__(self):
+        super().__init__("bot"
+        
+            def start(self):
                 self.send_message(
                     chat_id=int(id),
                     text="<b>Bot Started!</b>"

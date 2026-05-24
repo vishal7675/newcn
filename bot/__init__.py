@@ -12,12 +12,7 @@ if not BOT_TOKEN or not API_ID or not API_HASH:
     LOGGER.error("One or more env variables missing! Exiting now...")
     sys.exit(1)
 class CloneBot(Client):
-    def __init__(self):
-        super().__init__("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, plugins=dict(root="bot/plugins"), time_offset=0)
-        async def start(self):
-        await super().start()
-        LOGGER.info("Bot Started Successfully!")
-        async def stop(self):
-        await super().stop()
-        LOGGER.info("Bot Stopped!")
+    def __init__(self): super().__init__("bot", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN, plugins=dict(root="bot/plugins"), time_offset=0)
+    async def start(self): await super().start(); LOGGER.info("Bot Started Successfully!")
+    async def stop(self): await super().stop(); LOGGER.info("Bot Stopped!")
 bot = CloneBot()

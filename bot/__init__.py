@@ -112,19 +112,20 @@ except:
     LOGGER.error("One or more env variables missing! Exiting now")
     exit(1)
 
-    class CloneBot(Client):
-    def __init__(self):
+     class CloneBot(Client):
+        def __init__(self):
         super().__init__("bot", time_offset=0)
 
-    def start(self):
-     try:
-             self.send_message(
+        def start(self):
+        try:
+            self.send_message(
                 chat_id=int(id),
                 text="<b>Bot Started!</b>"
-             )
+            )
         except:
             pass
         return
+        
 
     def stop(self):
         for id in sorted(AUTHORIZED_CHATS.union(SUDO_USERS)):
